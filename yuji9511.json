@@ -1,0 +1,456 @@
+[
+    {
+        "EndTime": 1523713800,
+        "NewRating": 37,
+        "OldRating": 0,
+        "Place": 630,
+        "ContestName": "AtCoder Beginner Contest 094",
+        "StandingsUrl": "/contests/abc094/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1525527600,
+        "NewRating": 121,
+        "OldRating": 37,
+        "Place": 1115,
+        "ContestName": "AtCoder Beginner Contest 096",
+        "StandingsUrl": "/contests/abc096/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1526132400,
+        "NewRating": 242,
+        "OldRating": 121,
+        "Place": 461,
+        "ContestName": "AtCoder Beginner Contest 097",
+        "StandingsUrl": "/contests/abc097/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1526825400,
+        "NewRating": 486,
+        "OldRating": 242,
+        "Place": 928,
+        "ContestName": "AtCoder Grand Contest 024",
+        "StandingsUrl": "/contests/agc024/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1527342000,
+        "NewRating": 668,
+        "OldRating": 486,
+        "Place": 156,
+        "ContestName": "AtCoder Beginner Contest 098",
+        "StandingsUrl": "/contests/abc098/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1528035000,
+        "NewRating": 767,
+        "OldRating": 668,
+        "Place": 1002,
+        "ContestName": "AtCoder Grand Contest 025",
+        "StandingsUrl": "/contests/agc025/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1528638000,
+        "NewRating": 751,
+        "OldRating": 767,
+        "Place": 1217,
+        "ContestName": "AtCoder Beginner Contest 099",
+        "StandingsUrl": "/contests/abc099/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1529156400,
+        "NewRating": 824,
+        "OldRating": 751,
+        "Place": 697,
+        "ContestName": "AtCoder Beginner Contest 100",
+        "StandingsUrl": "/contests/abc100/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1529761200,
+        "NewRating": 894,
+        "OldRating": 824,
+        "Place": 216,
+        "ContestName": "AtCoder Beginner Contest 101",
+        "StandingsUrl": "/contests/abc101/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1530450600,
+        "NewRating": 1001,
+        "OldRating": 894,
+        "Place": 85,
+        "ContestName": "AtCoder Beginner Contest 102",
+        "StandingsUrl": "/contests/abc102/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1530972000,
+        "NewRating": 1066,
+        "OldRating": 1001,
+        "Place": 606,
+        "ContestName": "SoundHound Inc. Programming Contest 2018 -Masters Tournament-",
+        "StandingsUrl": "/contests/soundhound2018-summer-qual/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1533476400,
+        "NewRating": 1088,
+        "OldRating": 1066,
+        "Place": 554,
+        "ContestName": "AtCoder Beginner Contest 104",
+        "StandingsUrl": "/contests/abc104/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1534599600,
+        "NewRating": 1151,
+        "OldRating": 1088,
+        "Place": 293,
+        "ContestName": "AtCoder Beginner Contest 106",
+        "StandingsUrl": "/contests/abc106/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1535809200,
+        "NewRating": 1102,
+        "OldRating": 1151,
+        "Place": 782,
+        "ContestName": "AtCoder Beginner Contest 108",
+        "StandingsUrl": "/contests/abc108/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1536414000,
+        "NewRating": 1079,
+        "OldRating": 1102,
+        "Place": 1044,
+        "ContestName": "AtCoder Beginner Contest 109",
+        "StandingsUrl": "/contests/abc109/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1537021200,
+        "NewRating": 1163,
+        "OldRating": 1079,
+        "Place": 535,
+        "ContestName": "AtCoder Grand Contest 027",
+        "StandingsUrl": "/contests/agc027/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1538228400,
+        "NewRating": 1145,
+        "OldRating": 1163,
+        "Place": 422,
+        "ContestName": "AtCoder Beginner Contest 111",
+        "StandingsUrl": "/contests/abc111/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1538833200,
+        "NewRating": 1167,
+        "OldRating": 1145,
+        "Place": 460,
+        "ContestName": "AtCoder Beginner Contest 112",
+        "StandingsUrl": "/contests/abc112/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1539441000,
+        "NewRating": 1225,
+        "OldRating": 1167,
+        "Place": 572,
+        "ContestName": "AtCoder Grand Contest 028",
+        "StandingsUrl": "/contests/agc028/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1540647600,
+        "NewRating": 1203,
+        "OldRating": 1225,
+        "Place": 674,
+        "ContestName": "Tenka1 Programmer Contest",
+        "StandingsUrl": "/contests/tenka1-2018/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1543064400,
+        "NewRating": 1185,
+        "OldRating": 1203,
+        "Place": 865,
+        "ContestName": "第5回 ドワンゴからの挑戦状 予選",
+        "StandingsUrl": "/contests/dwacon5th-prelims/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1543758000,
+        "NewRating": 1192,
+        "OldRating": 1185,
+        "Place": 440,
+        "ContestName": "AtCoder Beginner Contest 114",
+        "StandingsUrl": "/contests/abc114/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1544883600,
+        "NewRating": 1271,
+        "OldRating": 1192,
+        "Place": 477,
+        "ContestName": "AtCoder Grand Contest 029",
+        "StandingsUrl": "/contests/agc029/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1545487200,
+        "NewRating": 1339,
+        "OldRating": 1271,
+        "Place": 291,
+        "ContestName": "CADDi 2018",
+        "StandingsUrl": "/contests/caddi2018/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1547301600,
+        "NewRating": 1403,
+        "OldRating": 1339,
+        "Place": 312,
+        "ContestName": "エイシング プログラミング コンテスト 2019",
+        "StandingsUrl": "/contests/aising2019/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1547388000,
+        "NewRating": 1441,
+        "OldRating": 1403,
+        "Place": 429,
+        "ContestName": "キーエンス プログラミング コンテスト 2019",
+        "StandingsUrl": "/contests/keyence2019/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1548597600,
+        "NewRating": 1419,
+        "OldRating": 1441,
+        "Place": 1238,
+        "ContestName": "全国統一プログラミング王決定戦予選",
+        "StandingsUrl": "/contests/nikkei2019-qual/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1549720800,
+        "NewRating": 1453,
+        "OldRating": 1419,
+        "Place": 603,
+        "ContestName": "「みんなのプロコン 2019」",
+        "StandingsUrl": "/contests/yahoo-procon2019-qual/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1552747200,
+        "NewRating": 1482,
+        "OldRating": 1453,
+        "Place": 631,
+        "ContestName": "AtCoder Grand Contest 031",
+        "StandingsUrl": "/contests/agc031/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1553352600,
+        "NewRating": 1507,
+        "OldRating": 1482,
+        "Place": 525,
+        "ContestName": "AtCoder Grand Contest 032",
+        "StandingsUrl": "/contests/agc032/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1553954400,
+        "NewRating": 1517,
+        "OldRating": 1507,
+        "Place": 696,
+        "ContestName": "エクサウィザーズ 2019",
+        "StandingsUrl": "/contests/exawizards2019/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1555767600,
+        "NewRating": 1496,
+        "OldRating": 1517,
+        "Place": 825,
+        "ContestName": "Tenka1 Programmer Contest 2019",
+        "StandingsUrl": "/contests/tenka1-2019/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1558791600,
+        "NewRating": 1469,
+        "OldRating": 1496,
+        "Place": 1315,
+        "ContestName": "AtCoder Beginner Contest 127",
+        "StandingsUrl": "/contests/abc127/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1558878000,
+        "NewRating": 1474,
+        "OldRating": 1469,
+        "Place": 700,
+        "ContestName": "AtCoder Beginner Contest 128",
+        "StandingsUrl": "/contests/abc128/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1559484000,
+        "NewRating": 1485,
+        "OldRating": 1474,
+        "Place": 709,
+        "ContestName": "AtCoder Grand Contest 034",
+        "StandingsUrl": "/contests/agc034/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1560087600,
+        "NewRating": 1495,
+        "OldRating": 1485,
+        "Place": 540,
+        "ContestName": "AtCoder Beginner Contest 129",
+        "StandingsUrl": "/contests/abc129/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1560607200,
+        "NewRating": 1564,
+        "OldRating": 1495,
+        "Place": 264,
+        "ContestName": "diverta 2019 Programming Contest 2",
+        "StandingsUrl": "/contests/diverta2019-2/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1560692400,
+        "NewRating": 1596,
+        "OldRating": 1564,
+        "Place": 300,
+        "ContestName": "AtCoder Beginner Contest 130",
+        "StandingsUrl": "/contests/abc130/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1561210800,
+        "NewRating": 1619,
+        "OldRating": 1596,
+        "Place": 345,
+        "ContestName": "AtCoder Beginner Contest 131",
+        "StandingsUrl": "/contests/abc131/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1561815600,
+        "NewRating": 1644,
+        "OldRating": 1619,
+        "Place": 306,
+        "ContestName": "AtCoder Beginner Contest 132",
+        "StandingsUrl": "/contests/abc132/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1562506800,
+        "NewRating": 1649,
+        "OldRating": 1644,
+        "Place": 484,
+        "ContestName": "AtCoder Beginner Contest 133",
+        "StandingsUrl": "/contests/abc133/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1563115200,
+        "NewRating": 1717,
+        "OldRating": 1649,
+        "Place": 229,
+        "ContestName": "AtCoder Grand Contest 035",
+        "StandingsUrl": "/contests/agc035/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1563630000,
+        "NewRating": 1807,
+        "OldRating": 1717,
+        "Place": 32,
+        "ContestName": "AtCoder Beginner Contest 134",
+        "StandingsUrl": "/contests/abc134/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1564234800,
+        "NewRating": 1816,
+        "OldRating": 1807,
+        "Place": 259,
+        "ContestName": "AtCoder Beginner Contest 135",
+        "StandingsUrl": "/contests/abc135/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1564926000,
+        "NewRating": 1853,
+        "OldRating": 1816,
+        "Place": 154,
+        "ContestName": "AtCoder Beginner Contest 136",
+        "StandingsUrl": "/contests/abc136/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1565444400,
+        "NewRating": 1852,
+        "OldRating": 1853,
+        "Place": 308,
+        "ContestName": "AtCoder Beginner Contest 137",
+        "StandingsUrl": "/contests/abc137/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1566135600,
+        "NewRating": 1877,
+        "OldRating": 1852,
+        "Place": 175,
+        "ContestName": "AtCoder Beginner Contest 138",
+        "StandingsUrl": "/contests/abc138/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1566654000,
+        "NewRating": 1854,
+        "OldRating": 1877,
+        "Place": 658,
+        "ContestName": "第一回日本最強プログラマー学生選手権-予選-",
+        "StandingsUrl": "/contests/jsc2019-qual/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1567345200,
+        "NewRating": 1820,
+        "OldRating": 1854,
+        "Place": 837,
+        "ContestName": "AtCoder Beginner Contest 139",
+        "StandingsUrl": "/contests/abc139/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1567863600,
+        "NewRating": 1833,
+        "OldRating": 1820,
+        "Place": 257,
+        "ContestName": "AtCoder Beginner Contest 140",
+        "StandingsUrl": "/contests/abc140/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1568554800,
+        "NewRating": 1843,
+        "OldRating": 1833,
+        "Place": 227,
+        "ContestName": "AtCoder Beginner Contest 141",
+        "StandingsUrl": "/contests/abc141/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1569073800,
+        "NewRating": 1873,
+        "OldRating": 1843,
+        "Place": 251,
+        "ContestName": "AtCoder Grand Contest 038",
+        "StandingsUrl": "/contests/agc038/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1569678000,
+        "NewRating": 1867,
+        "OldRating": 1873,
+        "Place": 338,
+        "ContestName": "AtCoder Beginner Contest 142",
+        "StandingsUrl": "/contests/abc142/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1571492400,
+        "NewRating": 1841,
+        "OldRating": 1867,
+        "Place": 542,
+        "ContestName": "AtCoder Beginner Contest 143",
+        "StandingsUrl": "/contests/abc143/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1572183600,
+        "NewRating": 1862,
+        "OldRating": 1841,
+        "Place": 206,
+        "ContestName": "AtCoder Beginner Contest 144",
+        "StandingsUrl": "/contests/abc144/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1572802200,
+        "NewRating": 1889,
+        "OldRating": 1862,
+        "Place": 221,
+        "ContestName": "AtCoder Grand Contest 040",
+        "StandingsUrl": "/contests/agc040/standings?watching=yuji9511"
+    },
+    {
+        "EndTime": 1573308000,
+        "NewRating": 1882,
+        "OldRating": 1889,
+        "Place": 493,
+        "ContestName": "第二回全国統一プログラミング王決定戦予選",
+        "StandingsUrl":"/cont…
