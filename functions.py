@@ -4,7 +4,7 @@ from datetime import datetime as dt
 from pprint import pprint
 
 base_url = "https://atcoder.jp/users/"
-def getJsonData(username):
+def getJsonData(username, inputs):
     if username == "":
         return ""
     json_data = []
@@ -25,18 +25,22 @@ def getJsonData(username):
             "abc098.contest.atcoder.jp"
             StandingsUrl = rd["ContestScreenName"].replace(".contest.atcoder.jp", "")
             StandingsUrl = "/contests/" + StandingsUrl + "/standings?watching=" + username
+            if rd["ContestName"] in inputs:
+                rd["NewRating"] = inputs[rd["ContestName"]]
             data = {
                 "StandingsUrl": StandingsUrl,
                 "EndTime": timestamp,
-                "NewRating": rd["NewRating"],
+                "NewRating": int(rd["NewRating"]),
                 "OldRating": rd["OldRating"],
                 "Place": rd["Place"],
                 "ContestName": rd["ContestName"]
             }
             json_data.append(data)
+    # if len(json_data) == 0:
+    #     return ""
     # pprint(json_data)
 
 
     
 
-    return json.dumps(json_data)
+    return json_data

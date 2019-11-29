@@ -15,26 +15,55 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        <a class="text-white nav-link" href="https://github.com/ysugiyama12/atcoder-ratinggraph-generator">GitHub</a>
+        <a class="text-white nav-link" href="https://twitter.com/yuji9511_compro">Twitter</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             </ul>
             <form class="form-inline my-2 my-lg-0" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="username">
-                <button class="btn x-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="ユーザIDを入力" aria-label="Search"
+                    name="username" value="{{username}}">
+                <button class="btn x-outline-success my-2 my-sm-0 text-light" type="submit">このユーザで初期化する</button>
             </form>
         </div>
     </nav>
-    {{username}}
-    <div>
-        <canvas id="ratingStatus" width="640" height="80"></canvas>
-    </div>
-    <div>
-        <canvas id="ratingGraph" width="640" height="360"></canvas>
+    {% if not rating_json_dump %}
+    <h4>指定されたユーザは存在しません。</h4>
+    {% else %}
+    <h4>{{username}}</h4>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-6 graph-left">
+            <div>
+                <canvas id="ratingStatus" width="640" height="80"></canvas>
+            </div>
+            <div>
+                <canvas id="ratingGraph" width="640" height="360"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form method="POST">
+                <div class="graph-right">
+                    <table class="table">
+                        <tr>
+                            <th>Contest Name</th>
+                            <th>New Rating</th>
+                        </tr>
+                        {% for data in rating_json %}
+                        <tr>
+                            <td>{{data.ContestName}}</td>
+                            <td><input type="number" value="{{data.NewRating}}" name="{{data.ContestName}}" /></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <button class="m-1 btn x-outline-success my-2 my-sm-0 text-white btn-primary" type="submit">レート更新！</button>
+            </form>
+        </div>
     </div>
 
     <span style="display:none" id="rating_history">
-        {{rating_json}}
+        {{rating_json_dump}}
     </span>
 </body>
 
@@ -43,6 +72,16 @@
     body {
         text-align: center;
         margin: auto;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .graph-right {
+        height: 450px;
+        overflow-y: scroll;
+        border: 1px solid grey;
     }
 </style>
 <script>
@@ -105,6 +144,8 @@
         var rating_text, place_text, diff_text, date_text, contest_name_text;
         var particles;
         var standings_url;
+        var dragPointX;
+        var dragPointY;
 
         function initStage(stage, canvas) {
             var width = canvas.getAttribute('width');
@@ -169,12 +210,13 @@
             initStatus();
             stage_status.update();
 
-            cj.Ticker.setFPS(60);
+            cj.Ticker.setFPS(10);
             cj.Ticker.addEventListener("tick", handleTick);
 
             function handleTick(event) {
-                updateParticles();
-                stage_status.update();
+                // updateParticles();
+                stage_graph.update();
+                // stage_status.update();
             }
         }
 
@@ -278,16 +320,53 @@
                 setStatus(rating_history[e.target.i], true);
             };
 
+            function pressmoveVertex(e) {
+                vertex_shapes[e.target.i].x = stage_graph.mouseX * 0.45;
+                vertex_shapes[e.target.i].y = stage_graph.mouseY * 0.45;
+                setStatus(rating_history[e.target.i], true);
+                chart_container.removeChild(line_shape);
+                line_shape = newShape(chart_container);
+                chart_container.setChildIndex(line_shape, 0);
+                for (var j = 0; j < 2; j++) {
+                    if (j == 0) line_shape.graphics.s("#AAA").ss(2);
+                    else line_shape.graphics.s("#FFF").ss(0.5);
+                    line_shape.graphics.mt(vertex_shapes[0].x, vertex_shapes[0].y);
+                    for (var i = 0; i < n; i++) {
+                        line_shape.graphics.lt(vertex_shapes[i].x, vertex_shapes[i].y);
+                    }
+                }
+                stage_graph.update();
+            };
+
+            function pressupVertex(e) {
+                setStatus(rating_history[e.target.i], true);
+                chart_container.removeChild(line_shape);
+                line_shape = newShape(chart_container);
+                chart_container.setChildIndex(line_shape, 0);
+                for (var j = 0; j < 2; j++) {
+                    if (j == 0) line_shape.graphics.s("#AAA").ss(2);
+                    else line_shape.graphics.s("#FFF").ss(0.5);
+                    line_shape.graphics.mt(vertex_shapes[0].x, vertex_shapes[0].y);
+                    for (var i = 0; i < n; i++) {
+                        line_shape.graphics.lt(vertex_shapes[i].x, vertex_shapes[i].y);
+                    }
+                }
+                stage_graph.update();
+
+            };
+
             function mouseoutVertex(e) {
                 vertex_shapes[e.target.i].scaleX = vertex_shapes[e.target.i].scaleY = 1;
                 stage_graph.update();
             };
             var highest_i = 0;
+            console.log(rating_history);
             for (var i = 0; i < n; i++) {
                 if (rating_history[highest_i].NewRating < rating_history[i].NewRating) {
                     highest_i = i;
                 }
             }
+            console.log(highest_i);
             for (var i = 0; i < n; i++) {
                 vertex_shapes.push(newShape(chart_container));
                 vertex_shapes[i].graphics.s("#FFF");
@@ -300,9 +379,12 @@
                 hitArea.graphics.f("#000").dc(1.5, 1.5, 6);
                 vertex_shapes[i].hitArea = hitArea;
                 vertex_shapes[i].addEventListener("mouseover", mouseoverVertex);
+                vertex_shapes[i].addEventListener("pressmove", pressmoveVertex);
+                vertex_shapes[i].addEventListener("pressup", pressupVertex);
                 vertex_shapes[i].addEventListener("mouseout", mouseoutVertex);
             }
             {
+                // stage_graph.addEventListener("mouseover", hoge);
                 var dx = 80;
                 if ((x_min + x_max) / 2 < rating_history[highest_i].EndTime) dx = -80;
                 var x = vertex_shapes[highest_i].x + dx;
@@ -401,9 +483,9 @@
             particle.visible = true;
             particle.color = color;
             if (star_flag) {
-                particle.text = "★";
+                particle.text = "💩";
             } else {
-                particle.text = "@";
+                particle.text = "🤔";
             }
             particle.alpha = alpha;
         }
