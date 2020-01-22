@@ -28,47 +28,46 @@
                     <a target="_blank" class="text-white nav-link" href="https://twitter.com/yuji9511_compro"><i class="fab fa-twitter"></i> @yuji9511_compro</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="ユーザIDを入力" aria-label="Search"
-                    name="username" value="{{username}}">
-                <button class="btn x-outline-success my-2 my-sm-0 text-light" type="submit">このユーザで初期化する</button>
-            </form>
         </div>
     </nav>
-
-    <div class="m-1">
-        {% if rating_json | length == 0 and username != "" %}
-        <h4>指定されたユーザは存在しません。</h4>
-        {% endif %}
-    </div>
-    <div class="center-block text-center">
-        <h4>あそびかた</h4>
-        <p>
-            ① 右上のフォームにAtCoderのUserIDを入れるとその人のレーティンググラフが表示されます。
-        </p>
-        <p>
-            ② グラフが表示されている状態で右のレート表を書き換えて「レート更新！」を押すとその数字通りのレーティンググラフが出力されます。
-        </p>
-        <p>
-            ③ 左のグラフの点をつまむと自由にグラフの形状をいじることができます。
-        </p>
-        <p>
-            ④ 完成したらスクショなどご自由にどうぞ。シェア機能はそのうち作りたいと思ってます。
-        </p>
-    </div>
-    {% if username != "" %}
-    <div class="row">
-        <div class="col-md-6 graph-left">
+    <div class="container mt-3">
+        <div>
+            <form class="form-inline" method="GET">
+                <label class="m-2">ユーザIDを入力</label>
+                <input class="form-control ml-3" type="search" placeholder="e.g. tourist" aria-label="Search"
+                    name="username" value="{{username}}" size="30">
+                <button class="m-2 btn btn-primary text-light" type="submit">グラフ出力</button>
+            </form>
+        </div>
+        <div class="m-3">
+            <a class="text-dark" href="#description" data-toggle="collapse" data-target="#description" aria-expand="false" aria-controls="description">あそびかた <i class="fas fa-sort-down"></i></a>
+            <div class="collapse" id="description">
+                <p>
+                    ① フォームにAtCoderのUserIDを入れるとその人のレーティンググラフが表示されます。
+                </p>
+                <p>
+                    ② グラフが表示されている状態で右のレート表を書き換えて「レート更新！」を押すとその数字通りのレーティンググラフが出力されます。
+                </p>
+                <p>
+                    ③ 左のグラフの点をつまむと自由にグラフの形状をいじることができます。
+                </p>
+                <p>
+                    ④ 完成したらスクショなどご自由にどうぞ。シェア機能はそのうち作りたいと思ってます。
+                </p>
+            </div>
+        </div>
+        {% if username != "" %}
+        <div class="m-auto">
             <div>
                 <canvas id="ratingStatus" width="640" height="80"></canvas>
             </div>
             <div>
                 <canvas id="ratingGraph" width="640" height="360"></canvas>
             </div>
-
+    
         </div>
-
-        <div class="col-md-6">
+    
+        <div class="m-auto">
             <form method="POST">
                 <div class="graph-right">
                     <table class="table">
@@ -84,12 +83,12 @@
                         {% endfor %}
                     </table>
                 </div>
-                <button class="mt-2 p-1 btn x-outline-success my-2 my-sm-0 text-white btn-primary"
+                <button class="m-3 p-1 btn x-outline-success my-sm-0 text-white btn-primary"
                     type="submit">レート更新！</button>
             </form>
         </div>
+        {% endif %}
     </div>
-    {% endif %}
 
     <span style="display:none" id="rating_history">
         {{rating_json_dump}}
@@ -99,11 +98,6 @@
 
 </html>
 <style>
-    body {
-        text-align: center;
-        /* margin: auto; */
-    }
-
     .row {
         width: 100%;
     }
