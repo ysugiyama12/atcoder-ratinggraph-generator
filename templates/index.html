@@ -36,7 +36,7 @@
                 <label class="m-2">ユーザIDを入力</label>
                 <input class="form-control ml-3" type="search" placeholder="e.g. tourist" aria-label="Search"
                     name="username" value="{{username}}" size="30">
-                <button class="m-2 btn btn-primary text-light" type="submit">グラフ出力</button>
+                <button class="m-2 btn btn-primary text-light" type="submit">新規グラフ作成</button>
             </form>
         </div>
         <div class="m-3">
@@ -46,7 +46,7 @@
                     ① フォームにAtCoderのUserIDを入れるとその人のレーティンググラフが表示されます。
                 </p>
                 <p>
-                    ② グラフが表示されている状態で下のレート表の数値を書き換えて「レート更新！」を押すとその数字通りのレーティンググラフが出力されます。
+                    ② グラフが表示されている状態で下のレート表の数値や色合いを書き換えて「グラフを更新」を押すとその設定通りのレーティンググラフが出力されます。
                 </p>
                 <p>
                     ③ PCの場合、グラフの点をつまむと自由にグラフの形状をいじることができます。
@@ -64,31 +64,59 @@
     
         </div>
     
-        <div class="m-auto">
-            <form method="POST">
-                <div class="graph-right">
-                    <table class="table">
-                        <tr>
-                            <th>Contest Name</th>
-                            <th>New Rating</th>
-                        </tr>
-                        {% for data in rating_json %}
-                        <tr>
-                            <td>{{data.ContestName}}</td>
-                            <td><input type="number" value="{{data.NewRating}}" name="{{data.ContestName}}" /></td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-                <button class="m-3 p-1 btn x-outline-success my-sm-0 text-white btn-primary"
-                    type="submit">レート更新！</button>
-            </form>
-        </div>
+        <h5>レート・色の変更</h5>
+        <form method="POST">
+            <div class="m-auto">
+                <!-- <form method="POST"> -->
+                    <div class="graph-right">
+                        <table class="table">
+                            <tr>
+                                <th>Contest Name</th>
+                                <th>New Rating</th>
+                            </tr>
+                            {% for data in rating_json %}
+                            <tr>
+                                <td>{{data.ContestName}}</td>
+                                <td><input type="number" value="{{data.NewRating}}" name="{{data.ContestName}}" /></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <!-- <button class="m-3 p-1 btn x-outline-success my-sm-0 text-white btn-primary"
+                        type="submit">レート更新！</button> -->
+                <!-- </form> -->
+            </div>
+    
+            <div class="m-auto mt-3">
+                <!-- <form method="POST"> -->
+                    <div class="graph-right">
+                        <table class="table">
+                            <tr>
+                                <th>範囲</th>
+                                <th>カラーコード</th>
+                            </tr>
+                            {% for data in color_array %}
+                            <tr>
+                                <td><input type="number" value="{{data.0}}" name="{{data.2}}-num" /></td>
+                                <td><input type="text" value="{{data.1}}" name="{{data.2}}-col" /></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <button class="m-3 p-1 btn x-outline-success my-sm-0 text-white btn-primary"
+                        type="submit">グラフを更新する</button>
+                <!-- </form> -->
+            </div>
+        </form>
+
         {% endif %}
     </div>
 
     <span style="display:none" id="rating_history">
         {{rating_json_dump}}
+    </span>
+    <span style="display:none" id="color_json_dump">
+        {{color_json_dump}}
     </span>
     <span style="display:none;" id="username">{{username}}</span>
 </body>
@@ -112,6 +140,7 @@
         $(document).ready(init);
 
         const rating_history = JSON.parse($("#rating_history").text());
+        const rating_color = JSON.parse($("#color_json_dump").text());
 
         const MARGIN_VAL_X = 86400 * 30;
         const MARGIN_VAL_Y_LOW = 100;
@@ -132,16 +161,38 @@
         const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         const YEAR_SEC = 86400 * 365;
         const STEP_SIZE = 400;
-        const COLORS = [
-            [0, "#808080", 0.15],
-            [400, "#804000", 0.15],
-            [800, "#008000", 0.15],
-            [1200, "#00C0C0", 0.2],
-            [1600, "#0000FF", 0.1],
-            [2000, "#C0C000", 0.25],
-            [2400, "#FF8000", 0.2],
-            [2800, "#FF0000", 0.1]
-        ];
+        const COLORS = rating_color;
+        // const COLORS = [
+        //     [0, "#808080", 0.15],
+        //     [400, "#804000", 0.15],
+        //     [800, "#008000", 0.15],
+        //     [1100, "#FF0000", 0.15],
+        //     [1200, "#00C0C0", 0.2],
+        //     [1600, "#0000FF", 0.1],
+        //     [1900, "#C0C000", 0.25],
+        //     [2400, "#FF8000", 0.2],
+        //     [2800, "#FF0000", 0.1],
+        //     [3200, "#C0C0C0", 0.1],
+        //     [3600, "#cca11f", 0.1]
+        // ];
+        // const COLORS = [
+        //     [0, "#808080", 0.15],
+        //     [40, "#804000", 0.15],
+        //     [80, "#008000", 0.15],
+        //     [120, "#00C0C0", 0.2],
+        //     [160, "#0000FF", 0.1],
+        //     [200, "#C0C000", 0.25],
+        //     [240, "#FF8000", 0.2],
+        //     [280, "#FF0000", 0.1],
+        //     [320, "#808080", 0.15],
+        //     [360, "#804000", 0.15],
+        //     [400, "#008000", 0.15],
+        //     [440, "#00C0C0", 0.2],
+        //     [480, "#0000FF", 0.1],
+        //     [520, "#C0C000", 0.25],
+        //     [560, "#FF8000", 0.2],
+        //     [600, "#FF0000", 0.1]
+        // ];
         const STAR_MIN = 3200;
         const PARTICLE_MIN = 3;
         const PARTICLE_MAX = 20;
@@ -467,7 +518,7 @@
             var rating = data.NewRating, old_rating = data.OldRating;
             var place = data.Place;
             var contest_name = data.ContestName;
-            var tmp = getColor(rating); var color = tmp[1], alpha = tmp[2];
+            var tmp = getColor(rating); var color = tmp[1], alpha = 0.1;
             border_status_shape.graphics.c().s(color).ss(1).rr(OFFSET_X, OFFSET_Y, STATUS_WIDTH, STATUS_HEIGHT, 2);
             rating_text.text = rating;
             rating_text.color = color;
